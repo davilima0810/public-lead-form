@@ -55,7 +55,7 @@ export default function LeadForm() {
       method: 'POST',
       body: form,
     }).then(()=> {
-      router.push('/leads')
+      router.push('/success-form')
     }).catch(err=>{
       console.log(err)
     });
@@ -112,18 +112,16 @@ export default function LeadForm() {
         <S.CheckboxContainer>
           {visaOptions.map((option) => (
             <div key={option.value}>
-            <S.CheckboxComponent
-              key={option.value}
-              name="visas"
-              value={option.value}
-              checked={formData.visas === option.value}
-              onChange={handleVisaChange}
-              type="checkbox"
-          />
-          <S.CheckboxLabel>{option.label}</S.CheckboxLabel>
-            </div>
-            
-
+              <S.CheckboxComponent
+                  key={option.value}
+                  name="visas"
+                  value={option.value}
+                  checked={formData.visas === option.value}
+                  onChange={handleVisaChange}
+                  type="checkbox"
+                />
+              <S.CheckboxLabel>{option.label}</S.CheckboxLabel>
+            </div> 
           ))}
         </S.CheckboxContainer>
         <S.TitleText>

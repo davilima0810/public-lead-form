@@ -1,27 +1,14 @@
 import styled from "styled-components";
 
-// Definição dos breakpoints para facilitar o uso
-const breakpoints = {
-  tablet: "768px",
-  mobile: "480px",
-};
-
 export const Container = styled.div`
+  width: 100%;
   height: 100%;
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    padding: 20px;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    padding: 10px;
-  }
+  align-items: flex-start;
+  justify-content: center;
 `;
 
 export const ContainerHeader = styled.div`
@@ -33,46 +20,20 @@ export const ContainerHeader = styled.div`
   background-color: #e9efb1;
   align-items: flex-start;
   justify-content: center;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    padding: 0% 10%;
-    height: 50vh;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    padding: 0% 5%;
-    height: 40vh;
-  }
 `;
 
 export const Title = styled.h1`
   font-weight: 800;
   font-size: 3rem;
   margin: 1rem 0rem;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    font-size: 2.5rem;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    font-size: 2rem;
-  }
 `;
 
 export const Logo = styled.img`
   width: 10%;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 20%;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    width: 30%;
-  }
 `;
 
-export const ContainerForm = styled.form`
-  width: 80%;
+export const ContainerForm = styled.div`
+  width: 70%;
   height: 100%;
   display: flex;
   flex: 1;
@@ -81,87 +42,52 @@ export const ContainerForm = styled.form`
   align-items: center;
   padding: 2% 20%;
   gap: 18px;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    padding: 2% 10%;
-    width: 90%;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    padding: 2% 5%;
-    width: 100%;
-  }
 `;
 
 export const Form = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 90%;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
+  ::after {
     width: 100%;
   }
 `;
 
 export const InputComponent = styled.input`
   height: 45px;
-  width: 50%;
-  border: 1px solid #e1e1e1;
-  border-radius: 10px;
+  width: 60%;
+  border: 1px solid #E1E1E1;
+  border-radius: 0px;
   text-align: left;
   text-indent: 1.5rem;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 70%;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    width: 100%;
-  }
+  border-radius: 10px;
 `;
 
 export const TextareaComponent = styled.textarea`
   height: 100px;
-  width: 50%;
-  border: 1px solid #e1e1e1;
-  border-radius: 10px;
+  width: 60%;
+  border: 1px solid #E1E1E1;
+  border-radius: 0px;
+  /* text-align: left; */
   text-indent: 1.5rem;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 70%;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    width: 100%;
-  }
+  border-radius: 10px;
 `;
 
 export const TitleText = styled.h3`
   font-weight: 700;
   margin: 0.5rem 0rem;
   text-align: center;
-
-  @media (max-width: ${breakpoints.mobile}) {
-    font-size: 1.2rem;
-  }
 `;
 
 export const TitleSubText = styled.h4`
   font-weight: 600;
   margin: 0.5rem 0rem;
   text-align: center;
-
-  @media (max-width: ${breakpoints.mobile}) {
-    font-size: 1rem;
-  }
 `;
 
+
 export const ButtonSubmit = styled.button`
-  width: 50%;
+  width: 60%;
   height: 45px;
   background-color: black;
   color: white;
@@ -170,17 +96,15 @@ export const ButtonSubmit = styled.button`
   border: none;
   cursor: pointer;
 
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 70%;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    width: 100%;
+  &:disabled {
+    background-color: #ddd;
+    color: #888; 
+    cursor: not-allowed;
   }
 `;
 
 export const CheckboxContainer = styled.div`
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex: 1;
@@ -189,21 +113,14 @@ export const CheckboxContainer = styled.div`
   align-items: flex-start;
   padding: 2% 20%;
   gap: 18px;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    padding: 2% 10%;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    padding: 2% 5%;
-  }
-`;
+`
 
 export const CheckboxComponent = styled.input`
-  border: 1px solid #e1e1e1;
-  border-radius: 10px;
+  border: 1px solid #E1E1E1;
+  border-radius: 0px;
   text-align: left;
   text-indent: 1.5rem;
+  border-radius: 10px;
   margin-right: 10px;
 `;
 
@@ -243,10 +160,5 @@ export const FileInputCustom = styled.div`
 
   &:hover {
     background-color: #e0e0e0;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    width: 100%;
-    text-align: center;
   }
 `;

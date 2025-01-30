@@ -22,8 +22,9 @@ const openDb = () => {
       linkedin TEXT,
       visas TEXT,
       openInput TEXT,
+      status TEXT DEFAULT 'PENDING',
       cvPath TEXT NOT NULL
-    )
+    );
   `);
   return db;
 };
